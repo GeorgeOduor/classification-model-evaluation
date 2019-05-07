@@ -48,14 +48,16 @@ Given predicted values as $\hat y$ and actual values as $y$,the jaccard index ca
 
 <img src="https://latex.codecogs.com/gif.latex?$$j(y,\hat&space;y)&space;=&space;\frac{|y\cap&space;\hat&space;y|}{|y\cup&space;\hat&space;y|}$$" title="$$j(y,\hat y) = \frac{|y\cap \hat y|}{|y\cup \hat y|}$$" />
 
-
+<img src="https://latex.codecogs.com/gif.latex?$$=&space;\frac{|y\cap&space;\hat&space;y|}{|y|&plus;|\hat&space;y|-|y\cap&space;\hat&space;y|}$$" title="$$= \frac{|y\cap \hat y|}{|y|+|\hat y|-|y\cap \hat y|}$$" />
 
 so lets say you have the folowing set of predicted and actual values.
+<img src="https://latex.codecogs.com/gif.latex?$$predicted:[0,0,0,0,0,1,1,1,1,1]$$" title="$$predicted:[0,0,0,0,0,1,1,1,1,1]$$" />
 
-$$predicted:[0,0,0,0,0,1,1,1,1,1]$$
-$$actual: [1,1,0,0,0,1,1,1,1,1]$$
+<img src="https://latex.codecogs.com/gif.latex?$$actual:&space;[1,1,0,0,0,1,1,1,1,1]$$" title="$$actual: [1,1,0,0,0,1,1,1,1,1]$$" />
+
 the jaccard index will be :
-$$j(y,\hat y) = \frac{8}{10+10-8}=0.66$$
+
+<img src="https://latex.codecogs.com/gif.latex?$$j(y,\hat&space;y)&space;=&space;\frac{8}{10&plus;10-8}=0.66$$" title="$$j(y,\hat y) = \frac{8}{10+10-8}=0.66$$" />
 
 The idea behind this index is that higher the similarity of these two groups the higher the index.
 
@@ -67,13 +69,7 @@ from sklearn.metrics import jaccard_similarity_score
 j_index = jaccard_similarity_score(y_true=y_test,y_pred=preds)
 round(j_index,2)
 ```
-
-
-
-
     0.94
-
-
 
 ## Confussion matrix
 Confusion matrix is used to describe the performance of a classification model on a set of test data for which true values are known.
@@ -128,19 +124,19 @@ This comes from the cinfusion matrix.Based on the above confussion matrix above,
 **Precision score:** this is the measure of the accuracy ,provided that a class label has been predicted.Simply put,it answers the following question,**of all the classes ,how many were correctly predicted?** The answer to this question should be as high as posible.
 
 It can be calculated as follows:
-$$Precision = \frac{TP}{TP+FP}$$
+<img src="https://latex.codecogs.com/gif.latex?$$Precision&space;=&space;\frac{TP}{TP&plus;FP}$$" title="$$Precision = \frac{TP}{TP+FP}$$" />
 
 **Recal score(Sensitivity)**:
 This is the true positive rate that is if it predicts positive then how often does this take place?
 
-$$TP=\frac{TP}{TP+FN}$$
+<img src="https://latex.codecogs.com/gif.latex?$$TP=\frac{TP}{TP&plus;FN}$$" title="$$TP=\frac{TP}{TP+FN}$$" />
 
 The F1 score is calculated based on the precision and recal of each class.
 It is the weighted average of the Precision and the recal scores.The F1 score reaches its perfect value at one and worst at 0.It is avery good way to show that a classifies has a good recal and precision values.
 
 We can calculate it using this formula:
 
-$$F1Score = 2(\frac{Precision\times Recal}{Precision +  Recal})$$
+<img src="https://latex.codecogs.com/gif.latex?$$F1Score&space;=&space;2(\frac{Precision\times&space;Recal}{Precision&space;&plus;&space;Recal})$$" title="$$F1Score = 2(\frac{Precision\times Recal}{Precision + Recal})$$" />
 
 ### Applying to the model above.
 
@@ -149,13 +145,7 @@ $$F1Score = 2(\frac{Precision\times Recal}{Precision +  Recal})$$
 from sklearn.metrics import f1_score
 f1_score(y_test,preds)
 ```
-
-
-
-
     0.9468599033816425
-
-
 
 F1 score can be calculated for all classes so that an average of the realized scores can be used as shown in the classification report bellow.
 
@@ -184,12 +174,11 @@ Log loss measures the performance of a model where the predicted outcome is a pr
 In real life when predicting a probability of 0.101 when the true label should be 1 would result in a high log loss.
 Log loss can be calculated for each row in the data set using the **Log loss equation**. 
 
-$$L= (y\times \log(\hat y)+(1-y)+\log(1-\hat y))$$
+<img src="https://latex.codecogs.com/gif.latex?$$L=&space;(y\times&space;\log(\hat&space;y)&plus;(1-y)&plus;\log(1-\hat&space;y))$$" title="$$L= (y\times \log(\hat y)+(1-y)+\log(1-\hat y))$$" />
 
 The equation simply measures how far each predicted probability is from the actual label.An average of the log loss from all the rows gives the ideal value for the log loss.
 
-$$Lloss= -\frac{1}{n}\sum(y\times \log(\hat y)+(1-y)+\log(1-\hat y))$$
-
+<img src="https://latex.codecogs.com/gif.latex?$$Lloss=&space;-\frac{1}{n}\sum(y\times&space;\log(\hat&space;y)&plus;(1-y)&plus;\log(1-\hat&space;y))$$" title="$$Lloss= -\frac{1}{n}\sum(y\times \log(\hat y)+(1-y)+\log(1-\hat y))$$" />
 A good and model should have a smaller log loss value.
 
 ### Applying in the above model.
@@ -199,22 +188,6 @@ A good and model should have a smaller log loss value.
 from sklearn.metrics import log_loss
 log_loss(y_test,predsprob)
 ```
-
-
-
-
     0.13710589473837184
 
-
-
 And there we have a 0.18 log loss!
-
-
-```python
-
-```
-
-
-```python
-
-```

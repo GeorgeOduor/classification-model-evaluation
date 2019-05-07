@@ -1,7 +1,7 @@
 
 ___
 
-# <center>COMMON CLASSIFICATION EVALUATION METRICS</center>
+# <center>COMMON CLASSIFICATION MODEL EVALUATION METRICS</center>
 ___
 
 How accurate is a clasification model?Is the model reliable?
@@ -124,6 +124,7 @@ This comes from the cinfusion matrix.Based on the above confussion matrix above,
 **Precision score:** this is the measure of the accuracy ,provided that a class label has been predicted.Simply put,it answers the following question,**of all the classes ,how many were correctly predicted?** The answer to this question should be as high as posible.
 
 It can be calculated as follows:
+
 <img src="https://latex.codecogs.com/gif.latex?$$Precision&space;=&space;\frac{TP}{TP&plus;FP}$$" title="$$Precision = \frac{TP}{TP+FP}$$" />
 
 **Recal score(Sensitivity)**:
@@ -179,6 +180,7 @@ Log loss can be calculated for each row in the data set using the **Log loss equ
 The equation simply measures how far each predicted probability is from the actual label.An average of the log loss from all the rows gives the ideal value for the log loss.
 
 <img src="https://latex.codecogs.com/gif.latex?$$Lloss=&space;-\frac{1}{n}\sum(y\times&space;\log(\hat&space;y)&plus;(1-y)&plus;\log(1-\hat&space;y))$$" title="$$Lloss= -\frac{1}{n}\sum(y\times \log(\hat y)+(1-y)+\log(1-\hat y))$$" />
+
 A good and model should have a smaller log loss value.
 
 ### Applying in the above model.
@@ -190,4 +192,9 @@ log_loss(y_test,predsprob)
 ```
     0.13710589473837184
 
-And there we have a 0.18 log loss!
+And there we have a 0.14 log loss!
+
+### Conclusions.
+
+1. Classification models group features into two or more than one groups.
+1. The choice of evaluation metrics should be well understood based on the model applied.

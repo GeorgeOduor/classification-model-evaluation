@@ -45,8 +45,10 @@ predsprob = reg.predict_proba(X_test)
 ## Jaccard Index.
 
 Given predicted values as $\hat y$ and actual values as $y$,the jaccard index can be defied as :
-$$j(y,\hat y) = \frac{|y\cap \hat y|}{|y\cup \hat y|}$$
-$$= \frac{|y\cap \hat y|}{|y|+|\hat y|-|y\cap \hat y|}$$
+
+<img src="https://latex.codecogs.com/gif.latex?$$j(y,\hat&space;y)&space;=&space;\frac{|y\cap&space;\hat&space;y|}{|y\cup&space;\hat&space;y|}$$" title="$$j(y,\hat y) = \frac{|y\cap \hat y|}{|y\cup \hat y|}$$" />
+
+
 
 so lets say you have the folowing set of predicted and actual values.
 
